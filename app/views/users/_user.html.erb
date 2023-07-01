@@ -1,0 +1,9 @@
+<%= link_to "/users/#{user.id}" do %>
+  <%= content_tag(:div, class: "user-profile") do %>
+    <%= tag.img(src: user.photo, alt: "User", class: "image") %>
+    <%= content_tag(:div, class: "user-description") do %>
+      <%= content_tag(:h2, user.name) %>
+      <%= content_tag(:h4, "Number of posts: #{user.posts.count}") %>
+    <% end %>
+  <% end %>
+<% end %>
