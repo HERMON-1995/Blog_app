@@ -1,1 +1,19 @@
-<h1>Here is a list of posts for users</h1>
+<%= content_tag(:div, class: "custom-comment-container") do %>
+  <%= content_tag(:h3, @post.text) %>
+    <%= content_tag(:div, class: "custom-comment-header") do %>
+        <%= content_tag(:div, "\"#{ @post.title }\" - #{ @post.author.name }", id: "custom-post-title") %>
+        <%= content_tag(:div, class: "custom-comment-like") do %>
+            <%= content_tag(:p, "Comments: #{ @post.comment_counter },") %>
+            <%= content_tag(:p, "Likes: #{ @post.likes_counter }", class: "custom-likes") %>
+        <% end %>
+    <% end %>
+
+    <%= content_tag(:div, class: "custom-comments-container") do %>
+        <% @comments = Post.find(@post.id).comments %>
+        <% @comments.each do |comment| %>
+            <%= content_tag(:div, id: "custom-single-comment") do %>
+                <%= content_tag(:p, "#{ comment.author.name }: #{ comment.text }") %>
+            <% end %>
+        <% end %>
+    <% end %>
+<% end %>
