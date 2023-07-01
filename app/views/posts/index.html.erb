@@ -1,1 +1,15 @@
-<h1>Here is a list of posts</h1>
+<%= content_tag(:div, class: "post-container") do %>
+    <%= content_tag(:div, class: "user-profile") do %>
+        <%= tag.img(src: @user.photo, class: "image") %>
+        <%= content_tag(:div, class: "user-info") do %>
+            <%= content_tag(:h1, @user.name) %>
+            <%= content_tag(:h3, "Number of posts: #{@posts.count}") %>
+        <% end %>
+    <% end %>
+
+    <%= content_tag(:div, class: "post-list") do %>
+        <% @posts.each do |post| %>
+            <%= render partial: "posts/post", locals: { post: post } %>
+        <% end %>
+    <% end %>
+<% end %>
