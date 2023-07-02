@@ -1,0 +1,54 @@
+<%= content_tag(:div, class: "edit-registration") do %>
+  <%= content_tag(:h2, "Edit #{resource_name.to_s.humanize}") %>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <%= content_tag(:div, class: "field") do %>
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <% end %>
+
+    <%= content_tag(:div, class: "field") do %>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <% end %>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <%= content_tag(:div) do %>
+        Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+      <% end %>
+    <% end %>
+
+    <%= content_tag(:div, class: "field") do %>
+      <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+      <% if @minimum_password_length %>
+        <br />
+        <%= content_tag(:em, "#{@minimum_password_length} characters minimum") %>
+      <% end %>
+    <% end %>
+
+    <%= content_tag(:div, class: "field") do %>
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <% end %>
+
+    <%= content_tag(:div, class: "field") do %>
+      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password, autocomplete: "current-password" %>
+    <% end %>
+
+    <%= content_tag(:div, class: "actions") do %>
+      <%= f.submit "Update" %>
+    <% end %>
+  <% end %>
+
+  <%= content_tag(:h3, "Cancel my account") %>
+
+  <%= content_tag(:div) do %>
+    Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %>
+  <% end %>
+
+  <%= link_to "Back", :back %>
+<% end %>
