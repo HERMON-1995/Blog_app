@@ -100,3 +100,49 @@ p {
   align-items: stretch;
   padding: 10px;
 }
+
+.like-button-container {
+  display: flex;
+  margin: 20px;
+  justify-content: space-evenly;
+}
+
+.like-button {
+  padding: 2px;
+  display: flex;
+}
+
+.like-button:hover,
+.comment-button:hover,
+.post-button:hover {
+  background-color: darkblue;
+  color: white;
+}
+
+.comment-heading,
+.post-heading {
+  text-align: center;
+}
+
+.new-comment-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.post-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+  margin: 20px auto;
+}
+
+.post-form-input {
+  height: 25px;
+}
+
+.post-form-text {
+  height: 50px;
+}
