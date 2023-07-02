@@ -7,6 +7,10 @@
         <% end %>
     <% end %>
 
+    <%= content_tag(:div, class: "post-button") do %>
+        <%= link_to "Add post", new_user_post_path %>
+      <% end %>
+
     <%= content_tag(:div, class: "post-list") do %>
         <% @posts.includes({comments: [:author]}, :likes).each do |post| %>
             <%= render partial: "posts/post", locals: { post: post } %>
