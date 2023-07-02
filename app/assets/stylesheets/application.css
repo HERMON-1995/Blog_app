@@ -112,6 +112,14 @@ p {
   display: flex;
 }
 
+.post-button {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  margin: auto;
+  font-size: 20px;
+}
+
 .like-button:hover,
 .comment-button:hover,
 .post-button:hover {
@@ -145,4 +153,31 @@ p {
 
 .post-form-text {
   height: 50px;
+}
+
+.Log-in,
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  height: 60vh;
+}
+
+.field {
+  margin: 10px;
+}
+
+.field-input {
+  height: 30px;
+  width: 350px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  margin: auto;
+  font-size: 20px;
 }
