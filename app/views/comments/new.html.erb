@@ -1,0 +1,8 @@
+<%= form_with(model: @comment, url: user_post_comments_path, method: :post, scope: :comment) do |form| %>
+    <%= content_tag(:h2, "Add comment", class: "comment-heading") %>
+
+    <%= content_tag(:div, class: "new-comment-form") do %>
+        <%= form.text_field :text, required: true, autofocus: true, placeholder: 'Hello', class: "comment-text-field" %>
+        <%= form.submit "Comment", class: "comment-button" %>
+    <% end %>
+<% end %>
