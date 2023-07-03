@@ -18,19 +18,19 @@ RSpec.describe 'User', type: :feature, js: false do
     expect(page).to have_content('Alice')
   end
 
-      it 'I can see the number of posts each user has written' do
-        visit '/users'
-        expect(page).to have_content('Number of posts: 2', count: 1)
-        expect(page).to have_content('Number of posts: 1', count: 1)
-      end
+  it 'I can see the number of posts each user has written' do
+    visit '/users'
+    expect(page).to have_content('Number of posts: 2', count: 1)
+    expect(page).to have_content('Number of posts: 1', count: 1)
+  end
 
-      it 'I can see the profile picture for each user' do
-        visit '/users'
-      
-        expect(page).to have_selector("img[src='https://example.com/john.jpg']")
-        expect(page).to have_selector("img[src='https://example.com/alice.jpg']")
-      end
-  
+  it 'I can see the profile picture for each user' do
+    visit '/users'
+
+    expect(page).to have_selector("img[src='https://example.com/john.jpg']")
+    expect(page).to have_selector("img[src='https://example.com/alice.jpg']")
+  end
+
   it 'links to user show pages' do
     visit '/users'
 

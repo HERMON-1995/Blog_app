@@ -41,7 +41,7 @@ RSpec.describe 'User Show', type: :feature, js: false do
 
   it 'I can see a button that lets me view all of a user\'s posts' do
     visit user_path(user)
-  
+
     expect(page).to have_content('See all posts')
   end
 end

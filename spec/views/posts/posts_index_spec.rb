@@ -48,7 +48,7 @@ RSpec.describe 'User', type: :feature, js: false do
       expect(page).to have_current_path(user_post_path(@user.id, @first_post.id))
     end
 
-    it 'I can see a section for pagination if there are more posts than fit on the view' do    
+    it 'I can see a section for pagination if there are more posts than fit on the view' do
       expect(page).to have_content('Pagination')
     end
   end
