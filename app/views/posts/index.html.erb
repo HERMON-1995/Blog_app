@@ -12,4 +12,7 @@
             <%= render partial: "posts/post", locals: { post: post } %>
         <% end %>
     <% end %>
+    <%= content_tag(:div, class: "button") do %>
+        Pagination
+    <% end %>
 <% end %>

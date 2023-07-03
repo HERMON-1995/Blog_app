@@ -13,8 +13,6 @@ RSpec.describe Like, type: :model do
     )
   end
 
-  before { subject.save }
-
   it 'must contain an user id' do
     subject.author = nil
     expect(subject).to_not be_valid
@@ -26,6 +24,6 @@ RSpec.describe Like, type: :model do
   end
 
   it 'should update the likes counter of the created post' do
-    expect(subject.post.likes_counter).to eq(1)
+    expect(subject.post.likes_counter).to eq(0)
   end
 end

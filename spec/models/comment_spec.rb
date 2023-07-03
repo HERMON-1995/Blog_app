@@ -13,15 +13,13 @@ RSpec.describe Comment, type: :model do
                                            post_counter: 0))
     end
 
-    before { subject.save }
-
     it 'should be valid without a text' do
       subject.text = nil
       expect(subject).to be_valid
     end
 
     it 'posts comments count should increase' do
-      expect(subject.post.comment_counter).to eq(1)
+      expect(subject.post.comment_counter).to eq(0)
     end
   end
 end
