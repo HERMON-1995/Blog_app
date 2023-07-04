@@ -3,9 +3,8 @@ require 'capybara/rspec'
 
 RSpec.describe 'User', type: :feature, js: false do
   before do
-    # Create some sample users for testing with unique email addresses
-    user1 = User.create(name: 'John', email: 'john@example.com', photo: 'https://example.com/john.jpg')
-    user2 = User.create(name: 'Alice', email: 'alice@example.com', photo: 'https://example.com/alice.jpg')
+    user1 = User.create(name: 'John', photo: 'https://example.com/john.jpg', bio: 'Passionate about science and technology.')
+    user2 = User.create(name: 'Alice', photo: 'https://example.com/alice.jpg', bio: 'Specializing in literature.')
     Post.create(title: 'Post 1', text: 'Content 1', author_id: user1.id)
     Post.create(title: 'Post 2', text: 'Content 2', author_id: user1.id)
     Post.create(title: 'Post 3', text: 'Content 3', author_id: user2.id)
@@ -41,7 +40,7 @@ RSpec.describe 'User', type: :feature, js: false do
   end
 
   it 'displays user information on show page' do
-    user = User.create(name: 'Jane', email: 'jane@example.com', photo: 'https://example.com/jane.jpg')
+    user = User.create(name: 'Jane', photo: 'https://example.com/jane.jpg', bio: 'Interested in history and art.')
 
     visit "/users/#{user.id}"
 
