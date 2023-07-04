@@ -3,7 +3,8 @@ require 'capybara/rspec'
 
 RSpec.describe 'User', type: :feature, js: false do
   before do
-    user1 = User.create(name: 'John', photo: 'https://example.com/john.jpg', bio: 'Passionate about science and technology.')
+    user1 = User.create(name: 'John', photo: 'https://example.com/john.jpg',
+                        bio: 'Passionate about science and technology.')
     user2 = User.create(name: 'Alice', photo: 'https://example.com/alice.jpg', bio: 'Specializing in literature.')
     Post.create(title: 'Post 1', text: 'Content 1', author_id: user1.id)
     Post.create(title: 'Post 2', text: 'Content 2', author_id: user1.id)
