@@ -1,0 +1,16 @@
+<%= content_tag(:h2, "Resend unlock instructions") %>
+
+<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <%= content_tag(:div, class: "field") do %>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <% end %>
+
+  <%= content_tag(:div, class: "actions") do %>
+    <%= f.submit "Resend unlock instructions" %>
+  <% end %>
+<% end %>
+
+<%= render "devise/shared/links" %>

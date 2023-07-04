@@ -1,3 +1,7 @@
+<%= content_tag(:div) do %>
+  <%= button_to "Sign out", destroy_user_session_path, class: "sign_out", method: :delete %>
+<% end %>
+
 <%= content_tag(:div, class: "blog-container") do %>
     <%= content_tag(:h1, "Blog app", class: "blog-heading") %>
     <% @users.each do |user| %>

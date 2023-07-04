@@ -1,0 +1,7 @@
+<%= content_tag(:p, "Hello #{email}!") %>
+
+<% if @resource.try(:unconfirmed_email?) %>
+  <%= content_tag(:p, "We're contacting you to notify you that your email is being changed to #{@resource.unconfirmed_email}.") %>
+<% else %>
+  <%= content_tag(:p, "We're contacting you to notify you that your email has been changed to #{email}.") %>
+<% end %>
