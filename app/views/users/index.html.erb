@@ -1,1 +1,7 @@
-<h1>Here is the list of all users</h1>
+<%= content_tag(:div, class: "blog-container") do %>
+    <%= content_tag(:h1, "Blog app", class: "blog-heading") %>
+    <% @users.each do |user| %>
+      <%= render partial: "users/user", locals: { user: user } %>
+    <% end %>
+  <% end %>
+  

@@ -1,0 +1,17 @@
+<%= content_tag(:div, class: "post-item") do %>
+    <%= link_to user_post_path(@user, post.id) do%>
+    <%= content_tag(:h2, post.title) %>
+    <%= content_tag(:p, truncate(post.text, length: 80), class: "post-text") %>
+    <%= content_tag(:div, class: "post-actions") do %>
+        <%= content_tag(:p, "Comments: #{post.comment_counter}") %>
+        <%= content_tag(:p, "Likes: #{post.likes_counter}", class: "likes") %>
+    <% end %>
+    <%= content_tag(:div, class: "comment-container") do %>
+        <% post.recent_five_comments.each do |comment| %>
+            <%= content_tag(:div, class: "comment") do %>
+                <%= content_tag(:p, "#{ comment.author.name }: #{ comment.text }") %>
+            <% end %>
+        <% end %>
+      <% end %>
+    <%end%>
+<% end %>

@@ -1,0 +1,8 @@
+<%= content_tag(:h2, "Create post", class: "post-heading") %>
+<%= form_with model: @post, url: user_posts_path(@user) do |form| %>
+  <%= content_tag(:div, class: "post-form-container") do %>
+    <%= form.text_field :title, required: true, autofocus: true, placeholder: 'Title', class: "post-form-input" %>
+    <%= form.text_area :text, required: true, autofocus: true, placeholder: 'Text', class: "post-form-text" %>
+    <%= form.submit "Create", class: "post-button" %>
+  <% end %>
+<% end %>
